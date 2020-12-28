@@ -5,9 +5,11 @@ MAINTAINER Pete McGilley pete@mcgilley.com
 
 EXPOSE 60000
 ADD https://github.com/FuzzyDays/openshift/src /home/app/src
+ADD https://github.com/FuzzyDays/openshift/pom/xml /home/app
 #COPY src /home/app/src
-COPY pom.xml /home/app
+#COPY pom.xml /home/app
 WORKDIR /home/app
+RUN dir
 #RUN mvn -X clean
 ENTRYPOINT ["tail", "-f", "/dev/null"]
 RUN mvn clean verify -Dthreads=5 -Dloops=5 -Drampup=5 -Durl=192.168.0.90 -Dport=5000 -Dtestfile=test01.jmx
