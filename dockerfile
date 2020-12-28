@@ -5,7 +5,7 @@ MAINTAINER Pete McGilley pete@mcgilley.com
 
 EXPOSE 60000
 ADD https://github.com/FuzzyDays/openshift/src /home/app/src
-ADD https://github.com/FuzzyDays/openshift/pom/xml /home/app
+ADD https://github.com/FuzzyDays/openshift/pom.xml /home/app
 #COPY src /home/app/src
 #COPY pom.xml /home/app
 WORKDIR /home/app
