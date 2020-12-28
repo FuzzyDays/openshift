@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+ 
+    <groupId>com.edw</groupId>
+    <artifactId>JMeterLoadTesting</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>JMeterLoadTesting</name>
+    <description>A Load Testing tool</description>
+ 
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+ 
+    <dependencies>
+ 
+    </dependencies>
+ 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.lazerycode.jmeter</groupId>
+                <artifactId>jmeter-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>configuration</id>
+                        <goals>
+                            <goal>configure</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jmeter-tests</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>jmeter</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jmeter-check-results</id>
+                        <goals>
+                            <goal>results</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+					<jmeterVersion>5.4</jmeterVersion>
+					<generateReports>true</generateReports>
+                    <testFilesIncluded>
+                        <jMeterTestFile>${testfile}</jMeterTestFile>
+                    </testFilesIncluded>
+                    <propertiesJMeter>
+                        <threads>${threads}</threads>
+                        <rampup>${rampup}</rampup>
+                        <loops>${loops}</loops>
+                        <url>${url}</url>
+                        <port>${port}</port>
+                    </propertiesJMeter>
+                    <errorRateThresholdInPercent>1</errorRateThresholdInPercent>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
