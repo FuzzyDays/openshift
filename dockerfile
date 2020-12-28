@@ -7,8 +7,8 @@ EXPOSE 60000
 #ADD https://github.com/FuzzyDays/openshift /home/app
 #ADD https://github.com/FuzzyDays/openshift/src /home/app/src
 #ADD https://github.com/FuzzyDays/openshift/pom.xml /home/app
-COPY /tmp/build/inputs/source /home/app
-#COPY pom.xml /home/app
+COPY src /home/app
+COPY pom.xml /home/app
 WORKDIR /home/app
 RUN ls && cat pom.xml
 #RUN mvn -X clean
