@@ -10,7 +10,7 @@ EXPOSE 60000
 RUN ls
 RUN ls /tmp
 #RUN ls /var/lib/jenkins/jobs/bob/workspace/load
-COPY src /home/app
+COPY src /home/app/src
 COPY pom.xml /home/app
 WORKDIR /home/app
 RUN ls && cat pom.xml
