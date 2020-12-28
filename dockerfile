@@ -9,7 +9,7 @@ EXPOSE 60000
 #ADD https://github.com/FuzzyDays/openshift/pom.xml /home/app
 RUN ls
 RUN ls /tmp
-RUN ls /var/lib/jenkins/jobs/bob/workspace/load
+#RUN ls /var/lib/jenkins/jobs/bob/workspace/load
 COPY src /home/app
 COPY pom.xml /home/app
 WORKDIR /home/app
