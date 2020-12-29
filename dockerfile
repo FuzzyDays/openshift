@@ -16,7 +16,7 @@ WORKDIR /tmp
 RUN curl -LJO https://github.com/FuzzyDays/openshift/archive/main.zip
 RUN unzip openshift-main.zip
 RUN ls
-RUN cp /tmp/openshift-main/src /home/app/src
+RUN cp -R /tmp/openshift-main/src /home/app/src
 RUN cp /tmp/openshift-main/pom.xml /home/app/src
 WORKDIR /home/app
 RUN ls
