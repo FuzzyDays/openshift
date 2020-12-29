@@ -23,7 +23,7 @@ RUN cp /tmp/openshift-main/pom.xml /home/app
 WORKDIR /tmp
 RUN rm -R *
 WORKDIR /home/app
-RUN ls && ls src && ls src/test && ls src/test/jmeter
+RUN ls -lR
 #RUN mvn -X clean
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
 RUN mvn clean verify -Dthreads=5 -Dloops=5 -Drampup=5 -Durl=192.168.0.90 -Dport=5000 -Dtestfile=test01.jmx
