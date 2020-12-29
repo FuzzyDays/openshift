@@ -9,9 +9,13 @@ EXPOSE 60000
 #ADD https://github.com/FuzzyDays/openshift/pom.xml /home/app
 #RUN ls
 #RUN ls /tmp
-#RUN ls /var/lib/jenkins/jobs/bob/workspace/load
-COPY src /home/app/src
-COPY pom.xml /home/app
+RUN ls /var/lib/jenkins/jobs/bob/workspace/source
+#COPY src /home/app/src
+#COPY pom.xml /home/app
+WORKDIR /tmp
+RUN curl -LJO https://github.com/FuzzyDays/openshift/archive/main.zip
+RUN unzip main.zip
+RUN ls
 WORKDIR /home/app
 RUN ls
 #RUN mvn -X clean
