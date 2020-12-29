@@ -13,7 +13,7 @@ EXPOSE 60000
 #COPY src /home/app/src
 #COPY pom.xml /home/app
 WORKDIR /tmp
-RUN curl -LJO https://github.com/FuzzyDays/openshift/archive/main.zip
+RUN curl -LJO https://github.com/FuzzyDays/openshift/archive/openshift-main.zip
 RUN unzip main.zip
 RUN ls
 WORKDIR /home/app
