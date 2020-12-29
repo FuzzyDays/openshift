@@ -1,5 +1,5 @@
 
-FROM openjdk/openjdk-11-rhel7
+FROM openjdk-11-rhel7
 #FROM maven:3.6.0-jdk-11-slim AS maven_build
 #FROM ubuntu:latest
 ##FROM maven:3.6.0-jdk-11-slim AS build
