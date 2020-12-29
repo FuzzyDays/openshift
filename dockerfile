@@ -1,6 +1,6 @@
-# FROM ubuntu:lates
-#FROM maven:3.6.0-jdk-11-slim AS build
-FROM maven:3.6.0-jdk-11-slim AS maven_build
+FROM ubuntu:latest
+#FROM maven:3.6.0-jdk-11-slim AS maven_build
+##FROM maven:3.6.0-jdk-11-slim AS build
 MAINTAINER Pete McGilley pete@mcgilley.com
 
 EXPOSE 60000
