@@ -1,5 +1,5 @@
 
-FROM rhel7
+FROM pete-dev/openjdk-11-rhel7:latest
 #FROM maven:3.6.0-jdk-11-slim AS maven_build
 #FROM ubuntu:latest
 ##FROM maven:3.6.0-jdk-11-slim AS build
