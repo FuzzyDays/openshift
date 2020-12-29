@@ -29,7 +29,7 @@ WORKDIR /home/app
 RUN ls -lR
 #RUN mvn -X clean
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
-RUN mvn clean verify -Dthreads=5 -Dloops=5 -Drampup=5 -Durl=jenkins-pete-dev.apps.sandbox.x8i5.p1.openshiftapps.com -Dport=443 -Dtestfile=test01.jmx
+RUN mvn clean verify -Dthreads=5 -Dloops=5 -Drampup=5 -Durl=google.co.uk -Dport=443 -Dtestfile=test01.jmx
 #RUN mvn clean verify -Dthreads=5 -Dloops=5 -Drampup=5 -Durl=192.168.0.90 -Dport=5000 -Dtestfile=test01.jmx 
 #RUN apt-get -y update
 #RUN apt-get -y upgrade
