@@ -53,7 +53,7 @@
                         <url>${url}</url>
                         <port>${port}</port>
                     </propertiesJMeter>
-                    <errorRateThresholdInPercent>1</errorRateThresholdInPercent>
+                    <errorRateThresholdInPercent>80</errorRateThresholdInPercent>
                 </configuration>
             </plugin>
         </plugins>
