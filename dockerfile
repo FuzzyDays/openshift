@@ -20,7 +20,7 @@ RUN curl -LJO https://github.com/FuzzyDays/openshift/archive/main.zip \
 RUN ls
 WORKDIR /home/app
 #RUN mkdir src
-RUN cp -R /tmp/openshift-main/src /home/app
+RUN sudo cp -R /tmp/openshift-main/src /home/app
 RUN cp /tmp/openshift-main/pom.xml /home/app 
 WORKDIR /tmp
 RUN rm -R *
