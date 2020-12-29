@@ -30,7 +30,7 @@ RUN ls -lR
 #RUN mvn -X clean
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
 RUN mvn clean verify -Dthreads=5 -Dloops=5 -Drampup=5 -Durl=www.redhat.com/en -Dport=443 -Dtestfile=test01.jmx
-RUN mvn jmeter:configure jmeter:gui
+CMD ["sh", "-c", "tail -f /dev/null"]
 #RUN mvn clean verify -Dthreads=5 -Dloops=5 -Drampup=5 -Durl=192.168.0.90 -Dport=5000 -Dtestfile=test01.jmx 
 #RUN apt-get -y update
 #RUN apt-get -y upgrade
