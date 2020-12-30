@@ -6,14 +6,18 @@ FROM maven:3.6.0-jdk-11-slim AS maven_build
 MAINTAINER Pete McGilley pete@mcgilley.com
 
  # install rsync
-    RUN yum update -y
-    RUN yum -y install rsync xinetd
+    #RUN yum update -y
+    #RUN yum -y install rsync xinetd
     # configure rsync
-    ADD ./rsyncd.conf /root/
-    RUN sed -i 's/disable[[:space:]]*=[[:space:]]*yes/disable = no/g' /etc/xinetd.d/rsync # enable rsync
-    RUN cp /root/rsyncd.conf /etc/rsyncd.conf
-    RUN /etc/rc.d/init.d/xinetd start
-    RUN chkconfig xinetd on
+    #ADD ./rsyncd.conf /root/
+    #RUN sed -i 's/disable[[:space:]]*=[[:space:]]*yes/disable = no/g' /etc/xinetd.d/rsync # enable rsync
+    #RUN cp /root/rsyncd.conf /etc/rsyncd.conf
+    #RUN /etc/rc.d/init.d/xinetd start
+    #RUN chkconfig xinetd on
+    
+apt-get update
+apt-get install rsync
+rsync --version    
 
 EXPOSE 60000
 #ADD https://github.com/FuzzyDays/openshift /home/app
