@@ -15,8 +15,8 @@ MAINTAINER Pete McGilley pete@mcgilley.com
     #RUN /etc/rc.d/init.d/xinetd start
     #RUN chkconfig xinetd on
     
-RUN apt-get update
-RUN apt-get install rsync 
+RUN apt-get update  -y
+RUN apt-get install rsync  -y
 RUN rsync --version    
 
 EXPOSE 60000
