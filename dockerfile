@@ -15,9 +15,9 @@ MAINTAINER Pete McGilley pete@mcgilley.com
     #RUN /etc/rc.d/init.d/xinetd start
     #RUN chkconfig xinetd on
     
-apt-get update
-apt-get install rsync
-rsync --version    
+#apt-get update
+#apt-get install rsync
+#rsync --version    
 
 EXPOSE 60000
 #ADD https://github.com/FuzzyDays/openshift /home/app
