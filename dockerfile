@@ -1,7 +1,7 @@
 
-#FROM openjdk-11-rhel7:latest
+FROM openshift/openjdk-11-rhel7:latest
 #FROM openjdk-app
-FROM openshift/maven:3.6.0-jdk-11-slim AS maven_build
+#FROM maven:3.6.0-jdk-11-slim AS maven_build
 #FROM ubuntu:latest
 ##FROM maven:3.6.0-jdk-11-slim AS build
 #FROM pete-dev/openjdk-11-rhel7:latest
