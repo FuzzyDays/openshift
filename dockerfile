@@ -6,6 +6,9 @@
 ##FROM maven:3.6.0-jdk-11-slim AS build
 FROM pete-dev/openjdk-11-rhel7:latest
 
+
+USER root
+
 # Install necessary packages
 RUN yum repolist > /dev/null && \
      yum-config-manager --enable rhel-7-server-optional-rpms && \
@@ -22,7 +25,6 @@ RUN yum repolist > /dev/null && \
      
 MAINTAINER Pete McGilley pete@mcgilley.com
 
-USER root
  # install rsync
     #RUN yum update -y
     #RUN yum install rsync xinetd -y
