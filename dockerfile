@@ -1,27 +1,27 @@
 
 #FROM openjdk-11-rhel7:latest
 #FROM openjdk-app
-#FROM maven:3.6.0-jdk-11-slim AS maven_build
+FROM maven:3.6.0-jdk-11-slim AS maven_build
 #FROM ubuntu:latest
 ##FROM maven:3.6.0-jdk-11-slim AS build
-FROM pete-dev/openjdk-11-rhel7:latest
+#FROM pete-dev/openjdk-11-rhel7:latest
 
 
 USER root
 
 # Install necessary packages
-RUN yum repolist > /dev/null && \
-     yum-config-manager --enable rhel-7-server-optional-rpms && \
-     yum clean all && \
-     INSTALL_PKGS="tar \
-        unzip \
-        wget \
-        which \
-        yum-utils \
-        java-1.8.0-openjdk-devel" && \
-     yum install -y --setopt=tsflags=nodocs install $INSTALL_PKGS && \
-     rpm -V $INSTALL_PKGS && \
-     yum clean all
+#RUN yum repolist > /dev/null && \
+     #yum-config-manager --enable rhel-7-server-optional-rpms && \
+     #yum clean all && \
+     #INSTALL_PKGS="tar \
+       ## unzip \
+       # wget \
+       # which \
+        #yum-utils \
+       ## java-1.8.0-openjdk-devel" && \
+     #yum install -y --setopt=tsflags=nodocs install $INSTALL_PKGS && \
+     #rpm -V $INSTALL_PKGS && \
+     #yum clean all
      
 MAINTAINER Pete McGilley pete@mcgilley.com
 
@@ -36,9 +36,9 @@ MAINTAINER Pete McGilley pete@mcgilley.com
     #RUN /etc/rc.d/init.d/xinetd start
     #RUN chkconfig xinetd on
     
-#RUN apt-get update  -y
-#RUN apt-get install rsync  -y
-#RUN rsync --version    
+RUN apt-get update  -y
+RUN apt-get install rsync  -y
+RUN rsync --version    
 
 EXPOSE 60000
 #ADD https://github.com/FuzzyDays/openshift /home/app
