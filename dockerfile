@@ -1,6 +1,7 @@
 
+FROM openjdk
 #FROM openjdk-app
-FROM maven:3.6.0-jdk-11-slim AS maven_build
+#FROM maven:3.6.0-jdk-11-slim AS maven_build
 #FROM ubuntu:latest
 ##FROM maven:3.6.0-jdk-11-slim AS build
 MAINTAINER Pete McGilley pete@mcgilley.com
