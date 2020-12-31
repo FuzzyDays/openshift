@@ -6,6 +6,7 @@ FROM openjdk-11-rhel7:latest
 ##FROM maven:3.6.0-jdk-11-slim AS build
 MAINTAINER Pete McGilley pete@mcgilley.com
 
+USER root
  # install rsync
     RUN yum update -y
     RUN yum install rsync xinetd -y
