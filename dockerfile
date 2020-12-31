@@ -7,18 +7,18 @@ FROM openjdk-11-rhel7:latest
 MAINTAINER Pete McGilley pete@mcgilley.com
 
  # install rsync
-    #RUN yum update -y
-    #RUN yum -y install rsync xinetd
+    RUN yum update -y
+    RUN yum -y install rsync xinetd
     # configure rsync
-    #ADD ./rsyncd.conf /root/
-    #RUN sed -i 's/disable[[:space:]]*=[[:space:]]*yes/disable = no/g' /etc/xinetd.d/rsync # enable rsync
-    #RUN cp /root/rsyncd.conf /etc/rsyncd.conf
-    #RUN /etc/rc.d/init.d/xinetd start
-    #RUN chkconfig xinetd on
+    ADD ./rsyncd.conf /root/
+    RUN sed -i 's/disable[[:space:]]*=[[:space:]]*yes/disable = no/g' /etc/xinetd.d/rsync # enable rsync
+    RUN cp /root/rsyncd.conf /etc/rsyncd.conf
+    RUN /etc/rc.d/init.d/xinetd start
+    RUN chkconfig xinetd on
     
-RUN apt-get update  -y
-RUN apt-get install rsync  -y
-RUN rsync --version    
+#RUN apt-get update  -y
+#RUN apt-get install rsync  -y
+#RUN rsync --version    
 
 EXPOSE 60000
 #ADD https://github.com/FuzzyDays/openshift /home/app
