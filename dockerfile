@@ -10,6 +10,7 @@ MAINTAINER Pete McGilley pete@mcgilley.com
     RUN yum update -y
     RUN yum -y install rsync xinetd
     # configure rsync
+    RUN chown -R 1001:1001 /root/
     ADD ./rsyncd.conf /root/
     RUN sed -i 's/disable[[:space:]]*=[[:space:]]*yes/disable = no/g' /etc/xinetd.d/rsync # enable rsync
     RUN cp /root/rsyncd.conf /etc/rsyncd.conf
