@@ -7,8 +7,8 @@ FROM openjdk-11-rhel7:latest
 MAINTAINER Pete McGilley pete@mcgilley.com
 
  # install rsync
-    RUN yum update -y
-    RUN yum -y install rsync xinetd
+    RUN sudo yum update -y
+    RUN sudo yum -y install rsync xinetd
     # configure rsync
     RUN chown -R 1001:1001 /root/
     ADD ./rsyncd.conf /root/
