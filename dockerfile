@@ -7,7 +7,7 @@ FROM maven:3.6.0-jdk-11-slim AS maven_build
 #FROM pete-dev/openjdk-11-rhel7:latest
 
 
-USER root
+#USER root
 
 # Install necessary packages
 #RUN yum repolist > /dev/null && \
