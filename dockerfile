@@ -1,14 +1,14 @@
 
-#FROM openjdk-11-rhel7:latest
+FROM openjdk-11-rhel7:latest
 #FROM openjdk-app
-FROM maven:3.6.0-jdk-11-slim AS maven_build
+#FROM maven:3.6.0-jdk-11-slim AS maven_build
 #FROM ubuntu:latest
 ##FROM maven:3.6.0-jdk-11-slim AS build
 MAINTAINER Pete McGilley pete@mcgilley.com
 
  # install rsync
-    #RUN yum update -y
-    #RUN yum -y install rsync xinetd
+    RUN yum update -y
+    RUN yum install rsync xinetd -y
     # configure rsync
     #RUN chown -R 1001:1001 /root/
     #ADD ./rsyncd.conf /root/
