@@ -35,8 +35,9 @@ node('master') {
                 sh "oc new-app ${appname} --name=${appname} --allow-missing-imagestream-tags"
                 //sh "git clone https://github.com/edwin/jmeter-loadtesting.git load"
 				sleep(time:300,unit:"SECONDS")
-				pod = sh "echo \"oc get pods | grep Running | grep ${appname} | grep 1/1 | awk '{ print \$1 }'\""
-                echo pod   
+				sh "oc get pods | grep Running | grep ${appname} | grep 1/1 | awk '{ print \$1 }' > pod "
+            			pod = readFile('pod').trim()
+                		echo pod   
 				println pod
 				
 				// Get latest JMeter image from project to assign to job template
