@@ -77,6 +77,7 @@ node('master') {
     } finally {
         stage('housekeeping') {
             //sh "oc delete svc ${appname}"
+		sh "oc delete pod ${pod} --grace-period=0 --force"		
             sh "oc delete bc ${appname}"
             sh "oc delete is ${appname}"
             //sh "oc delete dc ${appname}"
