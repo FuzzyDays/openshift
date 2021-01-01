@@ -34,7 +34,7 @@ node('master') {
                 sh "oc start-build bc/${appname} --follow"
                 sh "oc new-app ${appname} --name=${appname} --allow-missing-imagestream-tags"
                 //sh "git clone https://github.com/edwin/jmeter-loadtesting.git load"
-				sleep(time:300,unit:"SECONDS")
+				sleep(time:600,unit:"SECONDS")
 				sh "oc get pods | grep Running | grep ${appname} | grep 1/1 | awk '{ print \$1 }' > pod "
             			pod = readFile('pod').trim()
                 		echo pod   
