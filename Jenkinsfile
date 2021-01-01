@@ -76,10 +76,10 @@ node('master') {
        throw error
     } finally {
         stage('housekeeping') {
-            sh "oc delete svc ${appname}"
+            //sh "oc delete svc ${appname}"
             sh "oc delete bc ${appname}"
             sh "oc delete is ${appname}"
-            sh "oc delete dc ${appname}"
+            //sh "oc delete dc ${appname}"
         }
     }
 }
