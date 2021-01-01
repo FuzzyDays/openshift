@@ -5,7 +5,9 @@ FROM pete-dev/maven:3.6.0-jdk-11-slim AS maven_build
 #FROM ubuntu:latest
 ##FROM maven:3.6.0-jdk-11-slim AS build
 #FROM pete-dev/openjdk-11-rhel7:latest
-
+ADD * /tmp
+RUN ls /tmp/
+RUN ls /tmp
 
 #USER root
 
@@ -41,9 +43,7 @@ RUN apt-get install rsync  -y
 RUN rsync --version    
 
 EXPOSE 60000
-ADD * /tmp
-RUN ls /tmp/hsperfdata_root
-RUN ls /tmp/dockerfile
+
 #ADD https://github.com/FuzzyDays/openshift /home/app
 #ADD https://github.com/FuzzyDays/openshift/src /home/app/src
 #ADD https://github.com/FuzzyDays/openshift/pom.xml /home/app
