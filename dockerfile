@@ -41,7 +41,7 @@ RUN apt-get install rsync  -y
 RUN rsync --version    
 
 EXPOSE 60000
-COPY * /tmp
+ADD * /tmp
 RUN ls /tmp
 #ADD https://github.com/FuzzyDays/openshift /home/app
 #ADD https://github.com/FuzzyDays/openshift/src /home/app/src
