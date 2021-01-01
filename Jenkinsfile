@@ -34,7 +34,7 @@ node('master') {
 				sh "ls"
 				sh "cat dockerfile"
 				sh "cat dockerfile | oc new-build --name ${appname} --dockerfile='-'"
-				sh "oc start-build ${appname} --from-dir=\".\" --follow"
+				sh "oc start-build ${appname} --from-dir=\"${workspace}\" --follow"
 				//sh "oc start-build bc/${appname} --follow"
 				sh "oc new-app ${appname} --name=${appname} --allow-missing-imagestream-tags"
 				sleep(time:12,unit:"SECONDS")
